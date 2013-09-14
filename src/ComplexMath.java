@@ -119,5 +119,50 @@ public class ComplexMath
   {
     return Math.hypot(c.getReal(), c.getImag()); 
   }
-  
+
+  //sin
+  //finds and returns the Complex sine of c
+  public static Complex sin(Complex c)
+  {
+    double re = Math.sin(c.getReal()) * Math.cosh(c.getImag());
+    double im = Math.cos(c.getReal()) * Math.sinh(c.getImag());
+
+    return new Complex(re, im);
+  }
+
+  //sinh
+  //finds and returns the Complex hyperbolic sine of c
+  public static Complex sinh(Complex c)
+  {
+    double re = Math.cos(c.getImag()) * Math.sinh(c.getReal());
+    double re = Math.sin(c.getImag()) * Math.cosh(c.getReal());
+
+    return new Complex(re, im);
+  }
+
+  //cos
+  //finds and returns the Complex cosine of c
+  public static Complex cos(Complex c)
+  {
+    double re = Math.cos(c.getReal()) * Math.cosh(c.getImag());
+    double im = Math.sin(c.getReal()) * Math.sinh(c.getImag());
+
+    return new Complex(re, im);
+  }
+
+  //cosh
+  //finds and returns the Complex hyperbolic cosine of c
+  public static Complex cosh(Complex c)
+  {
+    double re = Math.cos(c.getImag()) * Math.cosh(c.getReal());
+    double im = Math.sin(c.getImag()) * Math.sinh(c.getReal());
+
+    return new Complex(re, im);
+  }
+
+  public static Complex tan(Complex c)
+  {
+    return ComplexMath.divide(ComplexMath.sin(c), ComplexMath.cos(c));
+  }
+
 }
