@@ -9,9 +9,15 @@
 public class ComplexMath
 {
   
+  private ComplexMath()
+  {
+
+  }
+
   /**
   * Finds the conjugate of the given Complex.
   *
+  * <p>
   * The conjugate of any Complex represented as "a + bi" is given as "a - bi".
   *
   * @param c the Complex whose conjugate is to be found.
@@ -26,6 +32,7 @@ public class ComplexMath
   /**
   * Finds the reciprocal of the given Complex.
   *
+  * <p>
   * The reciprocal of any Complex represented as "a + bi" is given as "1 / (a + bi)".
   *
   * @param c the Complex whose reciprocal is to be found.
@@ -45,6 +52,7 @@ public class ComplexMath
   /**
   * Finds the sum of the given Complexes.
   *
+  * <p>
   * The sum of any two Complexes "a + bi" and "x + yi" will always be equal to
   * "(a+x) + (b+y)i".
   *
@@ -62,6 +70,7 @@ public class ComplexMath
   /**
   * Finds the sum of the given Complex and a non-complex number.
   *
+  * <p>
   * The sum of any Complex ("a + bi") and any non-complex number ("x") will always
   * be equal to "(a+x) + bi"
   *
@@ -77,11 +86,12 @@ public class ComplexMath
  /**
  * Finds the difference between two Complexes
  *
+ * <p>
  * The difference between any two Complexes will be the differences between 
  * their real and imaginary parts.
  *
- * @param c the Complex
- * @param num the non-complex number
+ * @param c1 the first Complex
+ * @param c2 the second Complex
  * @return a new Complex whose value is the sum of c and num
  */
   public static Complex subtract(Complex c1, Complex c2)
@@ -94,6 +104,7 @@ public class ComplexMath
   /**
   * Finds the difference between the given Complex and a non-complex number.
   *
+  * <p>
   * The difference between any Complex and a non-complex number will always be
   * the Complex's real value minus the number, with the imaginary value unchanged.
   *
@@ -109,6 +120,7 @@ public class ComplexMath
   /**
   * Finds the product of two Complexes.
   *
+  * <p>
   * If a Complex is multiplied by it's conjugate Complex, the resulting value will
   * ALWAYS be real, with no imaginary part.
   * Otherwise, the resulting product will likely contain an imaginary part.
@@ -127,6 +139,7 @@ public class ComplexMath
   /**
   * Finds the product of a Complex and a non-complex number.
   *
+  * <p>
   * The product of a Complex and a non-complex number will always be the non-complex
   * number distributed across the Complex's real and imaginary parts.
   *
@@ -142,6 +155,7 @@ public class ComplexMath
   /**
   * Finds the quotient of two Complexes.
   *
+  * <p>
   * The quotient of two Complexes is always equal to the following:
   * The multiplication of the first Complex and the conjugate of the second Complex,
   * all divided by the the multiplication of the second Complex and it's conjugate.
@@ -163,6 +177,7 @@ public class ComplexMath
  /**
  * Finds the quotient of a Complex and a non-complex number.
  *
+ * <p>
  * The quotient of a Complex and a non-complex number will always be the non-complex
  * number distributed across the Complex's real and imaginary parts.
  *
@@ -178,6 +193,7 @@ public class ComplexMath
   /**
   * Finds the result of a Complex raised to a certain number
   *
+  * <p>
   * @param c the Complex
   * @param raise the value that the Complex is raised to
   * @return a new Complex whose value is c to the power of raise
@@ -206,6 +222,7 @@ public class ComplexMath
   /**
   * Finds the magnitude of a Complex number.
   *
+  * <p>
   * The magnitude (also known as the hypotenuse, rho, Z, etc) of any complex number 
   * is equal to the square root of the sum of the squares of the Complex's 
   * real and imaginary parts. 

@@ -1,42 +1,71 @@
-/*  Complex.java    
-    Author: William Woodruff
-    Represents a complex number (a + bi) in terms of real and imaginary parts.
-    Coded 3/15/13
-    Modified 9/13/13
- */
-
+/**
+* @author     William Woodruff <woodrufw @ bxscience.edu>
+* @version    0.9
+* @since      2013-3-15
+*/
 public class Complex
 {
 
   //instance variables
   private double real, imag;
   
-  //default constructor
+  /**
+  * Default constructor.
+  */
   public Complex()
   {
     real = 0.0;
     imag = 0.0;
   }
   
-  //constructor taking specific a and b values
+  /**
+  * Constructor taking inital real and imaginary values for the Complex instance
+  * 
+  * @param re the real part
+  * @param im the imaginary part
+  */
   public Complex(double re, double im)
   {
     real = re;
     imag = im;
   }
   
-  //accessors
+  /**
+  * Returns the real component of the Complex object.
+  *
+  * @return the double value associated with the real component
+  */
   public double getReal() {return real;}
+
+  /**
+  * Returns the imaginary component of the Complex object.
+  *
+  * @return the double value associated with the imaginary component
+  */
   public double getImag() {return imag;}
   
-  //mutators
+  /**
+  * Sets the real component of the Complex object.
+  *
+  * @param re the value to be used in the real component
+  */
   public void setReal(double re) {real = re;}
+
+  /**
+  * Sets the imaginary component of the Complex object.
+  *
+  * @param im the value to be used in the imaginary component
+  */
   public void setImag(double im) {imag = im;}
 
   //conversion functions
   
-  //toInt
-  //converts the current Complex instance into an integer, if possible
+  /**
+  * Converts the Complex into an integer, if possible.
+  *
+  * @throws ComplexConversionException if the Complex cannot be converted 
+  * @return an int equal to the real component of the Complex
+  */
   public int toInt()
   {
     if (this.getImag() != 0)
@@ -45,8 +74,12 @@ public class Complex
       return (int) (this.getReal());
   }
   
-  //toFloat
-  //converts the current Complex instance into a float, if possible
+  /**
+  * Converts the Complex into an float, if possible.
+  *
+  * @throws ComplexConversionException if the Complex cannot be converted 
+  * @return a float equal to the real component of the Complex
+  */
   public float toFloat()
   {
     if (this.getImag() != 0)
@@ -54,8 +87,12 @@ public class Complex
     return (float) (this.getReal());
   }
   
-  //toDouble
-  //converts the current Complex instance into a Double, if possible
+  /**
+  * Converts the Complex into an double, if possible.
+  *
+  * @throws ComplexConversionException if the Complex cannot be converted 
+  * @return a double equal to the real component of the Complex
+  */
   public double toDouble()
   {
     if (this.getImag() != 0)
@@ -64,27 +101,25 @@ public class Complex
       return (this.getReal());
   }
   
-  //equals
-  //determines whether one Complex is 'equal' to another based on real and imag parts
-  //@param Complex c the Complex being compared
-  //@return true if equal, false otherwise
+  /**
+  * Compares this Complex instance to another, checking for equality.
+  * 
+  * Two Complexes are considered equal if they meet two conditions:
+  * Both must have equal real parts AND imaginary parts.
+  *
+  * @return true if the Complexes are equal, false otherwise
+  */
   public boolean equals(Complex c)
   {
-    if (c.getReal() == this.getReal() && c.getImag() == this.getImag()) return true;
-    
-    return false;
+    return (c.getReal() == this.getReal() && c.getImag() == this.getImag());
   }
   
-  //toString
-  //returns a String explaining the calling Complex instance
+  /**
+  * Creates a String that describes the Complex object in a + bi format.
+  *
+  * @return a String containing the real and imaginary parts in a + bi format
+  */
   public String toString()
-  {
-    return "This complex has a real part of " + real + " and an imaginary part of " + imag + ".\n"; 
-  }
-  
-  //strRep
-  //returns a literal representation of the complex number in a+bi form 
-  public String strRep()
   {
     return real + " + " + imag + "i\n"; 
   }
