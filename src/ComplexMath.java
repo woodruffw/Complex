@@ -160,9 +160,18 @@ public class ComplexMath
     return new Complex(re, im);
   }
 
+  //tan
+  //finds and returns the Complex tangent of c
   public static Complex tan(Complex c)
   {
     return ComplexMath.divide(ComplexMath.sin(c), ComplexMath.cos(c));
+  }
+
+  //tanh
+  //finds and returns the Complex hyperbolic tangent of c
+  public static Complex tanh(Complex c)
+  {
+    return ComplexMath.divide(ComplexMath.sinh(c), ComplexMath.cosh(c)); 
   }
 
 }
