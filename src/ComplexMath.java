@@ -1,21 +1,36 @@
-/*  ComplexMath.java
-    Author: William Woodruff
-    Provides a set a functions for basic operations on Complex objects
-    Coded 9/13/13
+/**
+* ComplexMath.java
+* A set of basic functions provided for operations on Complex objects
+*
+* @author     William Woodruff <woodrufw @ bxscience.edu>
+* @version    0.9
+* @since      2013-3-15
 */
-
 public class ComplexMath
 {
   
-  //conjugate
-  //calculates and returns a Complex equal to the conjugate of c
+  /**
+  * Finds the conjugate of the given Complex.
+  *
+  * The conjugate of any Complex represented as "a + bi" is given as "a - bi".
+  *
+  * @param c the Complex whose conjugate is to be found.
+  * @return a new Complex whose value is the conjugate of c
+  */
   public static Complex conjugate(Complex c)
   {
     return new Complex(c.getReal(), -c.getImag()); 
   }
   
-  //reciprocal
-  //calculates and returns a Complex equal to the reciprocal of c
+
+  /**
+  * Finds the reciprocal of the given Complex.
+  *
+  * The reciprocal of any Complex represented as "a + bi" is given as "1 / (a + bi)".
+  *
+  * @param c the Complex whose reciprocal is to be found.
+  * @return a new Complex whose value is the reciprocal of c
+  */
   public static Complex reciprocal(Complex c) 
   {
     double scale = (c.getReal() * c.getReal()) + (c.getImag() * c.getImag());
@@ -26,8 +41,17 @@ public class ComplexMath
     return new Complex(re, im);
   }
   
-  //add
-  //calculates and returns a Complex equal to the addition of c1 and c2
+
+  /**
+  * Finds the sum of the given Complexes.
+  *
+  * The sum of any two Complexes "a + bi" and "x + yi" will always be equal to
+  * "(a+x) + (b+y)i".
+  *
+  * @param c1 the first Complex
+  * @param c2 the second Complex
+  * @return a new Complex whose value is the sum of c1 and c2
+  */
   public static Complex add(Complex c1, Complex c2)
   {
     double re = c1.getReal() + c2.getReal();
@@ -35,15 +59,31 @@ public class ComplexMath
     return new Complex(re, im);
   }
 
-  //add
-  //calculates and returns a Complex equal to the addition of c and num
+  /**
+  * Finds the sum of the given Complex and a non-complex number.
+  *
+  * The sum of any Complex ("a + bi") and any non-complex number ("x") will always
+  * be equal to "(a+x) + bi"
+  *
+  * @param c the Complex
+  * @param num the non-complex number
+  * @return a new Complex whose value is the sum of c and num
+  */
   public static Complex add(Complex c, double num)
   {
     return new Complex(c.getReal() + num, c.getImag());
   }
   
-  //subtract
-  //calculates and returns a Complex equal to the subtraction of c2 from c1
+ /**
+ * Finds the difference between two Complexes
+ *
+ * The difference between any two Complexes will be the differences between 
+ * their real and imaginary parts.
+ *
+ * @param c the Complex
+ * @param num the non-complex number
+ * @return a new Complex whose value is the sum of c and num
+ */
   public static Complex subtract(Complex c1, Complex c2)
   {
     double re = c1.getReal() - c2.getReal();
@@ -51,15 +91,32 @@ public class ComplexMath
     return new Complex(re, im);
   }
 
-  //subtract
-  //calculates and returns a Complex equal to the subtraction of num from c
+  /**
+  * Finds the difference between the given Complex and a non-complex number.
+  *
+  * The difference between any Complex and a non-complex number will always be
+  * the Complex's real value minus the number, with the imaginary value unchanged.
+  *
+  * @param c the Complex
+  * @param num the non-complex number
+  * @return a new Complex whose value is the difference between c and num
+  */
   public static Complex subtract(Complex c, double num)
   {
     return new Complex(c.getReal() - num, c.getImag());
   }
   
-  //multiply
-  //calculates and returns a Complex equal to the multiplication of c1 and c2
+  /**
+  * Finds the product of two Complexes.
+  *
+  * If a Complex is multiplied by it's conjugate Complex, the resulting value will
+  * ALWAYS be real, with no imaginary part.
+  * Otherwise, the resulting product will likely contain an imaginary part.
+  *
+  * @param c1 the first Complex
+  * @param c2 the second Complex
+  * @return a new Complex whose value is the product of c1 and c2
+  */
   public static Complex multiply(Complex c1, Complex c2)
   {
     double re = c1.getReal() * c2.getReal() - c1.getImag() * c2.getImag();
@@ -67,15 +124,32 @@ public class ComplexMath
     return new Complex(re, im);
   }
 
-  //multiply
-  //calculates and returns a Complex equal to c * num
+  /**
+  * Finds the product of a Complex and a non-complex number.
+  *
+  * The product of a Complex and a non-complex number will always be the non-complex
+  * number distributed across the Complex's real and imaginary parts.
+  *
+  * @param c the Complex
+  * @param num the non-complex number
+  * @return a new Complex whose value is the product of c and num
+  */
   public static Complex multiply(Complex c, double num)
   {
     return new Complex(c.getReal() * num, c.getImag() * num);
   }
   
-  //divide
-  //calculates and returns a Complex equal to the division c1 / c2
+  /**
+  * Finds the quotient of two Complexes.
+  *
+  * The quotient of two Complexes is always equal to the following:
+  * The multiplication of the first Complex and the conjugate of the second Complex,
+  * all divided by the the multiplication of the second Complex and it's conjugate.
+  *
+  * @param c1 the first Complex and the numerator
+  * @param c2 the second Complex and the denominator
+  * @return a new Complex whose value is the quotient of c1 over c2
+  */
   public static Complex divide(Complex c1, Complex c2)
   {
     Complex conj = ComplexMath.conjugate(c2);
@@ -86,42 +160,70 @@ public class ComplexMath
     return ComplexMath.divide(numerator, denominator);
   }
 
-  //divide
-  //calculates and returns a Complex equal to the division c / num
+ /**
+ * Finds the quotient of a Complex and a non-complex number.
+ *
+ * The quotient of a Complex and a non-complex number will always be the non-complex
+ * number distributed across the Complex's real and imaginary parts.
+ *
+ * @param c the Complex
+ * @param num the non-complex number
+ * @return a new Complex whose value is the quotient of c over num
+ */
   public static Complex divide(Complex c, double num)
   {
     return new Complex(c.getReal() / num, c.getImag() / num);
   }
   
-  //pow
-  //calculates and returns a Complex equal to c^raise
+  /**
+  * Finds the result of a Complex raised to a certain number
+  *
+  * @param c the Complex
+  * @param raise the value that the Complex is raised to
+  * @return a new Complex whose value is c to the power of raise
+  */
   public static Complex pow(Complex c, int raise)
   {
-    if (raise == 1) return new Complex(c.getReal(), c.getImag());
+    Complex ret = new Complex(c.getReal(), c.getImag());
+    Complex orig = new Complex(c.getReal(), c.getImag());
+
+    if (raise == 1) ret = new Complex(c.getReal(), c.getImag());
     
-    else if (raise == 0) return new Complex(1, 0);
+    else if (raise == 0) ret = new Complex(1, 0);
     
     else
-    {
-      Complex orig = new Complex(c.getReal(), c.getImag());
-      Complex ret = new Complex(c.getReal(), c.getImag());
-      
-      for (int i = 1; i < raise; i++)
+    { 
+      for (int i = 1; i < Math.abs(raise); i++)
         ret = ComplexMath.multiply(orig, ret);
-      
-      return ret;
     }
+
+    if (raise < 0)
+      ret = ComplexMath.divide(ComplexMath.reciprocal(ret), 1);
+
+    return ret;
   }
   
-  //mag
-  //calculates the magnitude (hypotenuse) of c
+  /**
+  * Finds the magnitude of a Complex number.
+  *
+  * The magnitude (also known as the hypotenuse, rho, Z, etc) of any complex number 
+  * is equal to the square root of the sum of the squares of the Complex's 
+  * real and imaginary parts. 
+  *
+  * @param c the Complex
+  * @return a double whose value is the magnitude (hypotenuse) of c
+  */
   public static double mag(Complex c)
   {
     return Math.hypot(c.getReal(), c.getImag()); 
   }
 
-  //sin
-  //finds and returns the Complex sine of c
+  /**
+  * Finds the sine of a Complex number.
+  *
+  * @param c the Complex
+  * @return a Complex whose value is the sine of c
+  */
   public static Complex sin(Complex c)
   {
     double re = Math.sin(c.getReal()) * Math.cosh(c.getImag());
@@ -130,18 +232,26 @@ public class ComplexMath
     return new Complex(re, im);
   }
 
-  //sinh
-  //finds and returns the Complex hyperbolic sine of c
+  /**
+  * Finds the hyperbolic sine of a Complex number.
+  *
+  * @param c the Complex
+  * @return a Complex whose value is the hyperbolic sine of c
+  */
   public static Complex sinh(Complex c)
   {
     double re = Math.cos(c.getImag()) * Math.sinh(c.getReal());
-    double re = Math.sin(c.getImag()) * Math.cosh(c.getReal());
+    double im = Math.sin(c.getImag()) * Math.cosh(c.getReal());
 
     return new Complex(re, im);
   }
 
-  //cos
-  //finds and returns the Complex cosine of c
+  /**
+  * Finds the cosine of a Complex number.
+  *
+  * @param c the Complex
+  * @return a Complex whose value is the cosine of c
+  */
   public static Complex cos(Complex c)
   {
     double re = Math.cos(c.getReal()) * Math.cosh(c.getImag());
@@ -150,8 +260,12 @@ public class ComplexMath
     return new Complex(re, im);
   }
 
-  //cosh
-  //finds and returns the Complex hyperbolic cosine of c
+  /**
+  * Finds the hyperbolic cosine of a Complex number.
+  *
+  * @param c the Complex
+  * @return a Complex whose value is the hyperbolic cosine of c
+  */
   public static Complex cosh(Complex c)
   {
     double re = Math.cos(c.getImag()) * Math.cosh(c.getReal());
@@ -160,15 +274,23 @@ public class ComplexMath
     return new Complex(re, im);
   }
 
-  //tan
-  //finds and returns the Complex tangent of c
+  /**
+  * Finds the tangent of a Complex number.
+  *
+  * @param c the Complex
+  * @return a Complex whose value is the tangent of c
+  */
   public static Complex tan(Complex c)
   {
     return ComplexMath.divide(ComplexMath.sin(c), ComplexMath.cos(c));
   }
 
-  //tanh
-  //finds and returns the Complex hyperbolic tangent of c
+  /**
+  * Finds the hyperbolic tangent of a Complex number.
+  *
+  * @param c the Complex
+  * @return a Complex whose value is the hyperbolic tangent of c
+  */
   public static Complex tanh(Complex c)
   {
     return ComplexMath.divide(ComplexMath.sinh(c), ComplexMath.cosh(c)); 
