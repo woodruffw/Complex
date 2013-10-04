@@ -1,8 +1,7 @@
 /**
-* ComplexMath.java
-* A set of basic functions provided for operations on Complex objects
+* A set of basic static functions provided for operations on Complex objects
 *
-* @author     William Woodruff <woodrufw @ bxscience.edu>
+* @author     William Woodruff <woodrufwsoftware @ gmail.com>
 * @version    0.9
 * @since      2013-3-15
 */

@@ -1,5 +1,6 @@
 /**
-* @author     William Woodruff <woodrufw @ bxscience.edu>
+* ComplexConversionExceptions are thrown by the Complex class when Complex instances cannot be converted into primitives.
+* @author     William Woodruff <woodrufwsoftware @ gmail.com>
 * @version    0.9
 * @since      2013-3-15
 */

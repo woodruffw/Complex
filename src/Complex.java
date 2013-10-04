@@ -1,5 +1,7 @@
 /**
-* @author     William Woodruff <woodrufw @ bxscience.edu>
+* The Complex class represents a complex number, in a + bi format.
+* 
+* @author     William Woodruff <woodrufwsoftware @ gmail.com>
 * @version    0.9
 * @since      2013-3-15
 */
@@ -104,6 +106,7 @@ public class Complex
   /**
   * Compares this Complex instance to another, checking for equality.
   * 
+  * <p>
   * Two Complexes are considered equal if they meet two conditions:
   * Both must have equal real parts AND imaginary parts.
   *
