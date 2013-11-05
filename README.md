@@ -16,3 +16,9 @@ All together, it's only three files:
 ### How efficient is it?
 
 Honestly, I don't know. 
+
+### How do I use it?
+
+Just copy Complex's three files (mentioned above) into your project. 
+No libraries or packages are required.
+Complex's comments also contain JavaDoc tags, so feel free to generate your own documentation.
