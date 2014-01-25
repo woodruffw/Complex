@@ -1,7 +1,7 @@
 /**
 * A set of basic static functions provided for operations on Complex objects
 *
-* @author     William Woodruff <woodrufwsoftware @ gmail.com>
+* @author     William Woodruff <william @ tuffbizz.com>
 * @version    0.9
 * @since      2013-3-15
 */

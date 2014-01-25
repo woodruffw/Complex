@@ -1,7 +1,7 @@
 /**
 * The Complex class represents a complex number, in a + bi format.
 * 
-* @author     William Woodruff <woodrufwsoftware @ gmail.com>
+* @author     William Woodruff <william @ tuffbizz.com>
 * @version    0.9
 * @since      2013-3-15
 */
